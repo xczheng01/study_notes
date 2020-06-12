@@ -121,9 +121,19 @@ docker restart cinder_volume
 
 
 
+* Troubleshooting
+
+对接好存储后，创建虚机失败，在nova-compute日志中报如下错误，排查是由于没有启动multipathd容器
+
+![image-20200609180107369](C:\Users\xczheng\AppData\Roaming\Typora\typora-user-images\image-20200609180107369.png)
 
 
 
+打开 /etc/kolla/globals.yml ,将enable_multipathd改为yes
+
+![image-20200609180504410](C:\Users\xczheng\AppData\Roaming\Typora\typora-user-images\image-20200609180504410.png)
 
 
+
+上传multipathd容器到仓库
 
